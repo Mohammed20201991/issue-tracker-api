@@ -15,7 +15,7 @@ class IssueController extends Controller
      */
     public function index()
     {
-        //
+        return Issue::all();  // every issue will be feched from db
     }
     //  We do not need to show forms I will delete it
     // /**
@@ -36,7 +36,9 @@ class IssueController extends Controller
      */
     public function store(StoreIssueRequest $request)
     {
-        //
+        // dd($request ->validated() );
+        return Issue::create($request ->validated() );
+
     }
 
     /**
@@ -47,7 +49,7 @@ class IssueController extends Controller
      */
     public function show(Issue $issue)
     {
-        //
+        return $issue;
     }
 
     // /**
@@ -70,7 +72,8 @@ class IssueController extends Controller
      */
     public function update(UpdateIssueRequest $request, Issue $issue)
     {
-        //
+        $issue ->update($request->validated());
+        return $issue;
     }
 
     /**
@@ -81,6 +84,7 @@ class IssueController extends Controller
      */
     public function destroy(Issue $issue)
     {
-        //
+        $issue->delete();
+        return response()->json(null,204);  #204 == meeans no content
     }
 }

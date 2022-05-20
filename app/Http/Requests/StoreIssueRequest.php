@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Validation\Rule;
+// use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Support\Facades\Validator;
 class StoreIssueRequest extends FormRequest
 {
     /**
@@ -13,7 +14,8 @@ class StoreIssueRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // return false;
+        return true;
     }
 
     /**
@@ -23,8 +25,15 @@ class StoreIssueRequest extends FormRequest
      */
     public function rules()
     {
+        // her we can add validation rule
         return [
-            //
-        ];
+                    'title'=> 'required',
+                    'description' => 'nullable',
+                    'place'=> 'nullable',
+                    'status' =>[
+                                'required',
+                                 Rule::in(['NEW','DOING','DONE']),
+                                ]
+                ];
     }
 }
