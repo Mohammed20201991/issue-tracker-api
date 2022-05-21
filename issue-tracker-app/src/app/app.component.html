@@ -1,0 +1,173 @@
+<!-- <h1> Hello World </h1> -->
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Issue tracker</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">List issues</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">New issue</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<app-main-page> </app-main-page>
+<app-nav-bar></app-nav-bar>
+
+<!-- issue list -->
+<h2 class="display-2 my-3">My issues</h2>
+<p><a class="btn btn-primary" href="#" role="button">New issue</a></p>
+<div class="list-group">
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-danger"
+  >
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <h5 class="mb-1">Bad machine</h5>
+      <span class="badge badge-danger">NEW</span>
+    </div>
+    <p class="mb-1">
+      Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+      risus varius blandit.
+    </p>
+    <small>
+      <i class="fas fa-map-marker-alt"></i> PC1
+      <i class="fas fa-calendar-alt"></i> 2019.01.01.
+      <i class="fas fa-comment"></i>
+      <span class="badge badge-light badge-pill">3</span>
+    </small>
+  </a>
+
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-warning"
+  >
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <h5 class="mb-1">Bad machine</h5>
+      <span class="badge badge-warning">DOING</span>
+    </div>
+    <p class="mb-1">
+      Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+      risus varius blandit.
+    </p>
+    <small>
+      <i class="fas fa-map-marker-alt"></i> PC1
+      <i class="fas fa-calendar-alt"></i> 2019.01.01.
+      <i class="fas fa-comment"></i>
+      <span class="badge badge-light badge-pill">3</span>
+    </small>
+  </a>
+
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-success"
+  >
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <h5 class="mb-1">Bad machine</h5>
+      <span class="badge badge-success">DONE</span>
+    </div>
+    <p class="mb-1">
+      Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+      risus varius blandit.
+    </p>
+    <small>
+      <i class="fas fa-map-marker-alt"></i> PC1
+      <i class="fas fa-calendar-alt"></i> 2019.01.01.
+      <i class="fas fa-comment"></i>
+      <span class="badge badge-light badge-pill">3</span>
+    </small>
+  </a>
+</div>
+
+<!-- issue details page -->
+<h2 class="display-2 my-3">Details</h2>
+<dl class="row">
+  <dt class="col-sm-3">Status</dt>
+  <dd class="col-sm-9"><span class="badge badge-danger">NEW</span></dd>
+
+  <dt class="col-sm-3">Title</dt>
+  <dd class="col-sm-9">Bad machine</dd>
+
+  <dt class="col-sm-3">Place</dt>
+  <dd class="col-sm-9">PC-9</dd>
+
+  <dt class="col-sm-3">Date</dt>
+  <dd class="col-sm-9">2019.01.01.</dd>
+
+  <dt class="col-sm-3">Description</dt>
+  <dd class="col-sm-9">Some description</dd>
+
+  <dt class="col-sm-3">User</dt>
+  <dd class="col-sm-9">gyozke</dd>
+</dl>
+
+<p>
+  <a class="btn btn-primary" href="#" role="button">Edit</a>
+  <a class="btn btn-outline-danger" href="#" role="button">Delete</a>
+</p>
+
+
+<!-- issue form  -->
+<h2 class="display-2 my-3">New issue</h2>
+
+<form action="" novalidate>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      class="form-control is-invalid"
+      id="title"
+      placeholder="Title"
+      required
+    />
+    <div class="invalid-feedback">Please provide a title!</div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="5"
+      required
+    ></textarea>
+    <div class="invalid-feedback">Please provide a description!</div>
+  </div>
+  <div class="form-group">
+    <label for="place">Place</label>
+    <input
+      type="text"
+      class="form-control"
+      id="place"
+      placeholder="Place"
+      required
+    />
+    <div class="invalid-feedback">Please provide a place!</div>
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select class="form-control" id="status" required>
+      <option value="NEW">New</option>
+      <option value="DOING">Doing</option>
+      <option value="DONE">Done</option>
+    </select>
+    <div class="invalid-feedback">Please provide a status!</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
