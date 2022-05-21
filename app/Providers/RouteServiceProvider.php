@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+    // we do not have home page in api
     public const HOME = '/home';
 
     /**
