@@ -30,14 +30,14 @@ class UpdateIssueRequest extends FormRequest
     {
         // sometimes we update only part so we do validation at all
         return [
-            'title'=> 'sometimes|required',
+            'title'       => 'sometimes|required',
             'description' => 'sometimes',
-            'place'=> 'sometimes',
-            'status' =>[
-                        'sometimes',
-                        'required',
-                         Rule::in(['NEW','DOING','DONE']),
-                        ]
+            'place'       => 'sometimes',
+            'status'      =>[
+                                'sometimes',
+                                'required',
+                                Rule::in(['NEW','DOING','DONE']),
+                            ]
         ];
     }
 }

@@ -85,6 +85,6 @@ class IssueController extends Controller
     public function destroy(Issue $issue)
     {
         $issue->delete();
-        return response()->json(null,204);  #204 == meeans no content
+        return response()->json(null,204);  #204 == it means no content
     }
 }

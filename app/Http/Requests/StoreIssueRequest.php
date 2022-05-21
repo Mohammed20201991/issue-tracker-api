@@ -27,13 +27,13 @@ class StoreIssueRequest extends FormRequest
     {
         // her we can add validation rule
         return [
-                    'title'=> 'required',
+                    'title'       => 'required',
                     'description' => 'nullable',
-                    'place'=> 'nullable',
-                    'status' =>[
-                                'required',
-                                 Rule::in(['NEW','DOING','DONE']),
-                                ]
+                    'place'       => 'nullable',
+                    'status'      =>[
+                                      'required',
+                                      Rule::in(['NEW','DOING','DONE']),
+                                    ]
                 ];
     }
 }

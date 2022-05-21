@@ -17,7 +17,7 @@ class IssueFactory extends Factory
     public function definition()
     {
         return [
-            'title'      =>$this->faker->word(),
+            'title'      => $this->faker->word(),
             'description'=> $this->faker->sentence(),
             'place'      => $this->faker->numerify('PC-LAB-##'),
             'status'     => $this-> faker->randomElement(['NEW','DOING','DONE']),
