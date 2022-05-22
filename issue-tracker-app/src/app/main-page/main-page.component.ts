@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  public title = "My Very Best  Issue tracker application"
   constructor() { }
 
   ngOnInit(): void {
