@@ -7,7 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
                           {
-                            path: "",
+                            path: '',
                             // redirectTo: "/issues",
                             // pathMatch: "full",
                           component: MainPageComponent,

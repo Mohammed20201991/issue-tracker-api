@@ -16,16 +16,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div [ngbCollapse = "isMenuCollapsed"] class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div  [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <!-- <a class="nav-link" href="issues">List issues</a> -->
-        <a class="nav-link" routerLink="/issues">List issues</a>
+        <a
+        class="nav-link"
+          routerLink="/issues"
+          (click)="isMenuCollapsed =true"
+          >List issues
+        </a>
 
       </li>
       <li class="nav-item">
         <!-- <a class="nav-link" href="issues\new">New issue</a> -->
-        <a class="nav-link" routerLink="/issues/new">New issue</a>
+        <a
+          class="nav-link"
+          routerLink="/issues/new"
+          (click)="isMenuCollapsed = true"
+          >New issue
+        </a>
 
       </li>
 
