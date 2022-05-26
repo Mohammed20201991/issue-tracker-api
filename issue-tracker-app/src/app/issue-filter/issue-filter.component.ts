@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-issue-filter',
@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class IssueFilterComponent implements OnInit {
   // public status="NEW"; // STEP1 default value
   @Input()status = 'DONE';
+  // public status="DONE";
+  @Output() statusChange = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
@@ -15,7 +17,7 @@ export class IssueFilterComponent implements OnInit {
 
 
   handleStatusChange(){
-
+    this.statusChange.emit(this.status);
    }
 
 }

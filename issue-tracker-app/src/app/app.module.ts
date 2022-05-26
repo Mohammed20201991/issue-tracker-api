@@ -9,7 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { IssueFormComponent } from './issue-form/issue-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IssueFilterComponent } from './issue-filter/issue-filter.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { IssueFilterComponent } from './issue-filter/issue-filter.component';
     IssueFormComponent,
     IssueFilterComponent
   ],
-  imports: [BrowserModule,AppRoutingModule,NgbModule,FormsModule],
+  imports: [BrowserModule,AppRoutingModule,NgbModule,FormsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

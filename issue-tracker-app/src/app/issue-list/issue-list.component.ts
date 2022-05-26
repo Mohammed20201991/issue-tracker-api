@@ -13,15 +13,14 @@ export class IssueListComponent implements OnInit {
                     {id:2 , title:'issue2' , description: 'desc2',place :'place2', status :'DOING'},
                     {id:3 , title:'issue3' , description: 'desc3',place :'place3' , status :'DONE'},
                     {id:4 , title:'issue4' , description: 'desc4',place :'place4' , status :'NEW' },
-
                   ];
  public status="ALL"; // STEP1 default value
  public filteredIssues:Issue[]= [];
-
+public selectedIssue:Issue | null= null;
   constructor() { }
 
   ngOnInit(): void {
-    this.filterIssue()
+    this.filterIssue();
 
   }
 
@@ -31,8 +30,10 @@ export class IssueListComponent implements OnInit {
   :this.issues.filter((issue)=> issue.status=== this.status);
  }
 
-  handleStatusChange(){
-    this.filterIssue()
+  handleStatusChange(newStatus: string){
+    console.log(newStatus);
+    this.status = newStatus;
+    this.filterIssue();
    }
 
 }

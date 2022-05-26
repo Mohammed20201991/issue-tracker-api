@@ -1,11 +1,14 @@
 
 <!-- issue form  -->
-<h2 class="display-2 my-3">New issue</h2>
+<!-- <h2 class="display-2 my-3">New issue</h2> -->
+{{ issue | json }}
+{{ issueForm.value | json }}
 
-<form action="" novalidate>
+<form [formGroup]="issueForm">
   <div class="form-group">
     <label for="title">Title</label>
-    <input
+    <!-- [value]="issue.title" -->
+    <input  formControlName="title"
       type="text"
       class="form-control is-invalid"
       id="title"
@@ -16,7 +19,7 @@
   </div>
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea
+    <textarea formControlName="description"
       class="form-control"
       id="description"
       rows="5"
@@ -26,7 +29,7 @@
   </div>
   <div class="form-group">
     <label for="place">Place</label>
-    <input
+    <input formControlName="place"
       type="text"
       class="form-control"
       id="place"
@@ -37,7 +40,7 @@
   </div>
   <div class="form-group">
     <label for="status">Status</label>
-    <select class="form-control" id="status" required>
+    <select formControlName="status"  class="form-control" id="status" required>
       <option value="NEW">New</option>
       <option value="DOING">Doing</option>
       <option value="DONE">Done</option>
