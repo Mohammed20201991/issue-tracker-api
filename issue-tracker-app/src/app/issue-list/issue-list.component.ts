@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Issue } from '../issue';
+import { IssueService } from '../issue.service';
 
 @Component({
   selector: 'app-issue-list',
@@ -8,18 +9,17 @@ import { Issue } from '../issue';
 })
 export class IssueListComponent implements OnInit {
 
+  // start with empty list
   public issues : Issue []= [
-                    {id:1 , title:'issue1' , description: 'desc1',place :'place1', status : 'NEW' },
-                    {id:2 , title:'issue2' , description: 'desc2',place :'place2', status :'DOING'},
-                    {id:3 , title:'issue3' , description: 'desc3',place :'place3' , status :'DONE'},
-                    {id:4 , title:'issue4' , description: 'desc4',place :'place4' , status :'NEW' },
-                  ];
+
+                            ];
  public status="ALL"; // STEP1 default value
  public filteredIssues:Issue[]= [];
 public selectedIssue:Issue | null= null;
-  constructor() { }
+  constructor(private issueService : IssueService) { }
 
   ngOnInit(): void {
+    this.issues= this.issueService.getIssues();
     this.filterIssue();
 
   }
@@ -36,4 +36,9 @@ public selectedIssue:Issue | null= null;
     this.filterIssue();
    }
 
+   handleSave(issue : Issue){
+    //  console.log(issue);
+Object.assign(this.selectedIssue,issue);
+this.selectedIssue = null;
+   }
 }

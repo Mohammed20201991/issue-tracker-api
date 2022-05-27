@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainPageComponent implements OnInit {
 
   public title = "My Very Best  Issue tracker application"
+  public title2 = "My Very Best  Issue tracker application222"
   constructor() { }
 
   ngOnInit(): void {

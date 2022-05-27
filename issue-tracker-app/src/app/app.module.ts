@@ -11,6 +11,7 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { IssueFormComponent } from './issue-form/issue-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IssueFilterComponent } from './issue-filter/issue-filter.component';
+import { IssueEditComponent } from './issue-edit/issue-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IssueFilterComponent } from './issue-filter/issue-filter.component';
     IssueListComponent,
     IssueDetailComponent,
     IssueFormComponent,
-    IssueFilterComponent
+    IssueFilterComponent,
+    IssueEditComponent
   ],
   imports: [BrowserModule,AppRoutingModule,NgbModule,FormsModule,ReactiveFormsModule],
   providers: [],
