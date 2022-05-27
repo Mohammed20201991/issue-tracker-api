@@ -36,6 +36,8 @@ export class IssueService {
   }
 
   deleteIssue(id:number){
-    this.issues= this.issues.filter((issue)=> issue.id !==id);
+    const pos = this.issues.findIndex((issue) => issue.id === id);
+    this.issues.splice(pos,1);//deleting
+    // this.issues= this.issues.filter((issue)=> issue.id !==id);
   }
 }
