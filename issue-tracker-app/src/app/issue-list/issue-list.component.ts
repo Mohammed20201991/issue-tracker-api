@@ -15,13 +15,14 @@ export class IssueListComponent implements OnInit {
                             ];
  public status="ALL"; // STEP1 default value
  public filteredIssues:Issue[]= [];
-public selectedIssue:Issue | null= null;
+ public selectedIssue:Issue | null= null;
   constructor(private issueService : IssueService) { }
 
-  ngOnInit(): void {
-    this.issues= this.issueService.getIssues();
+//  we can delete void type here because typescript know what it return
+// every async function return Promise
+  async ngOnInit(){
+    this.issues = await this.issueService.getIssues();
     this.filterIssue();
-
   }
 
  private filterIssue(){

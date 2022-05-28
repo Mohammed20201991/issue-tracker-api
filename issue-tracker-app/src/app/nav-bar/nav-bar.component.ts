@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,9 +11,16 @@ export class NavBarComponent implements OnInit {
   // step1
   // public isMenuCollapsed = false;
   public isMenuCollapsed = true;
-  constructor() { }
+  constructor(
+    public authService:AuthService,
+    private router : Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 }

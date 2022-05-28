@@ -16,21 +16,21 @@ issue = new Issue();
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(){
     const urlId = this.route.snapshot.paramMap.get('id');
-    // console.log(urlId);
+    console.log(urlId);
     console.log(typeof urlId);
     if(urlId){
       const id = parseInt(urlId);
-      const issue = this.issueService.getIssue(id);
+      const issue = await this.issueService.getIssue(id);
       if (issue){
         this.issue = issue;
       }
     }
   }
 
-  handleDelete(){
-                  this.issueService.deleteIssue(this.issue.id);
+  async handleDelete(){
+                 await this.issueService.deleteIssue(this.issue.id);
                   this.router.navigate(['/issues']);
                 }
 

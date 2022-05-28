@@ -12,6 +12,11 @@ import { IssueFormComponent } from './issue-form/issue-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IssueFilterComponent } from './issue-filter/issue-filter.component';
 import { IssueEditComponent } from './issue-edit/issue-edit.component';
+// HTTP communication with a REST API
+// Physical import
+import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +27,11 @@ import { IssueEditComponent } from './issue-edit/issue-edit.component';
     IssueDetailComponent,
     IssueFormComponent,
     IssueFilterComponent,
-    IssueEditComponent
+    IssueEditComponent,
+    LoginComponent
   ],
-  imports: [BrowserModule,AppRoutingModule,NgbModule,FormsModule,ReactiveFormsModule],
+  // Logical import
+  imports: [BrowserModule,AppRoutingModule,NgbModule,FormsModule,ReactiveFormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
