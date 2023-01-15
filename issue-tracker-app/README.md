@@ -1,4 +1,41 @@
 # IssueTrackerApp
+We will create the issue tracker application in a client-side framework. We will install the framework, and create a clickable HTML mockup for the basic pages. We will meet components as well.
+
+First we need to Install and start a new Angular application 
+```
+> node -v
+v10.11.0
+> npm -v
+6.4.1
+```
+```
+# create a new application
+npx -p @angular/cli ng new IssueTrackerApp
+# Routing: yes
+# Stylesheet format: CSS
+## go into the app directory
+cd IssueTrackerApp
+```
+Start app : 
+```
+npm start
+```
+Install Twitter Bootstrap for CSS styling and components 
+```
+
+```
+Usage : 
+After installation (https://cli.angular.io/)the Angular command line interface (Links to an external site.) (Angular CLI) can be used with the `ng command`. Since it is installed locally to the project, it is configured to be used through `npm` scripts, so we can call it with `npx ng` as well. In the following we will use this longer but more accessible version.
+
+The available ng commands are listed after calling npx ng help.
+
+The installed application is a working starter application, and we can start it with `npx ng serve` or `npm start` (which is an alias for `ng serve`). A development server starts, and we can access our new application on http://localhost:4200  in the browser. From now the development environment watches the file changes, and the appropriate codes will be compiled and refreshed in the browser.
+
+We can use the Angular `CLI` to generate different types of code for us with the npx ng generate <type> <name> command.
+
+Create a navigation bar at the top of the page 
+Add content to the page and organize them into components 
+Introduce routing, and put the components onto different pages under different endpoints 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
 
@@ -16,7 +53,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests 
 
 ## Running end-to-end tests
 
